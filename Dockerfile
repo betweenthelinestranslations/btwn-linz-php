@@ -25,7 +25,7 @@ RUN curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.10.
  && curl -sSL https://sdk.cloud.google.com | bash
 
 
-COPY www.conf /usr/local/etc/php-fpm.d
+COPY php /usr/local/etc
 
 # Copy other required configuration into the container.
 # Make sure file ownership is correct on the document root.
