@@ -51,13 +51,13 @@ jobs:
       - name: Build the Docker image 8.0
         run: make && make push
         env:
-          PHP_VERSION: "8.0"
+          PHP_VERSION: "php-8.0"
           DOCKER_IMAGE_HOST: ghcr.io
-          DOCKER_IMAGE_ORG: demigod-tools
+          DOCKER_IMAGE_ORG: betweenthelinestranslations
 
       - name: Build the Docker image 8.1
         run: make && make push
         env:
-          PHP_VERSION: "8.1"
+          PHP_VERSION: "php-8.1"
           DOCKER_IMAGE_HOST: ghcr.io
-          DOCKER_IMAGE_ORG: demigod-tools
+          DOCKER_IMAGE_ORG: betweenthelinestranslations
