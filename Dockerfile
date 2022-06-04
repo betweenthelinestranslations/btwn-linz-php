@@ -33,7 +33,8 @@ RUN chown -R www-data:www-data /var/www/web  \
     && rm -Rf /var/www/html  \
     && ln -s /var/www/web /var/www/html \
     && mkdir -p /files/bucket-data \
-    && mkdir -p /secrets/db
+    && mkdir -p /secrets/db \
+    && echo "<?php phpinfo(); " >> /var/www/web/index.php
 
 STOPSIGNAL SIGQUIT
 
