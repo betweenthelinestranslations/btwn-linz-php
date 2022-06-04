@@ -22,6 +22,6 @@ build: ## build the project
 		 .
 
 push:  ## push the docker image to the repository
-	docker push ${IMAGE_TAG}:php-${PHP_VERSION}
+	docker push ${IMAGE_TAG}:${PHP_VERSION}
 
 .DEFAULT_GOAL := build
