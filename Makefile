@@ -18,7 +18,7 @@ build: ## build the project
 		--build-arg VERSION="${VERSION}" \
 		--build-arg REPO_NAME="${REPO_NAME}" \
 		--build-arg PHP_VERSION="${PHP_VERSION}" \
-		--tag=${IMAGE_TAG}:php-${PHP_VERSION} \
+		--tag=${IMAGE_TAG}:${PHP_VERSION} \
 		 .
 
 push:  ## push the docker image to the repository
