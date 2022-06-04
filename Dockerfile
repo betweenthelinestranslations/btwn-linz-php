@@ -1,7 +1,7 @@
 ARG PHP_VERSION=php-8.0
 
 # Build the Docker image for Drupal.
-FROM ghcr.io/demigod-tools/php:$PHP_VERSION
+FROM ghcr.io/demigod-tools/php:php-8.0
 
 RUN apt-get update -y \
     && apt-get upgrade -y  \
