@@ -1,4 +1,4 @@
-PROJECT_NAME ?= php
+PROJECT_NAME ?= btwn-linz-php
 REPO_NAME    ?= ${DOCKER_IMAGE_ORG}/${PROJECT_NAME}
 VCS_REF      ?= $(shell git rev-parse --short HEAD)
 DATE_TAG     ?= $(shell TZ=UTC date +%Y-%m-%d_%H.%M)
