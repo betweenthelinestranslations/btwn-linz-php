@@ -5,7 +5,7 @@ FROM ghcr.io/demigod-tools/php:php-8.0
 
 RUN apt-get update -y \
     && apt-get upgrade -y  \
-    && apt-get install iputils-ping libfcgi0ldbl -y
+    && apt-get install iputils-ping libfcgi0ldbl telnet vim -y
 
 LABEL org.label-schema.vendor="demigod-tools" \
   org.label-schema.name=$REPO_NAME \
