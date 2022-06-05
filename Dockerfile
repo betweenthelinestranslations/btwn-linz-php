@@ -26,6 +26,7 @@ RUN curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.10.
 
 
 COPY php /usr/local/etc
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 # Copy other required configuration into the container.
 # Make sure file ownership is correct on the document root.
