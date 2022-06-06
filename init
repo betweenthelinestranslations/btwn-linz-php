@@ -2,8 +2,22 @@
 
 ## Initial container actions:
 
-rm -Rf /var/www/html
-ln -s /var/www/web /var/www/html
+
+
+if [[ -n "${GITCLONE_URL}" ]]; then
+
+  cd /var/www
+  git init
+  git remote add origin ${GITCLONE_URL}
+  git fetch origin && git pull origin master
+
+  composer install
+
+  ln -s /files/temp /var/www/web/sites/default/temp
+  ln -s /files/private /var/www/web/sites/default/private
+  ln -s /files/public /var/www/web/sites/default/files
+fi
+
 mkdir -p /var/www/web/sites/default/files
 mkdir -p /var/www/web/sites/default/private
 mkdir -p /var/www/web/sites/default/temp
@@ -11,8 +25,6 @@ mkdir -p /var/www/web/sites/default/files/webpack
 touch /var/www/web/sites/default/files/.htaccess
 touch /var/www/web/sites/default/private/.htaccess
 touch /var/www/web/sites/default/temp/.htaccess
-
-
 chown -R www-data:www-data /var/www/web/sites/default
 chown www-data:www-data /var/www/web/sites/default/files/.htaccess
 chown www-data:www-data /var/www/web/sites/default/private/.htaccess
