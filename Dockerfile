@@ -1,7 +1,8 @@
 ARG PHP_VERSION=php-8.0
 
+
 # Build the Docker image for Drupal.
-FROM ghcr.io/demigod-tools/php:php-8.0
+FROM ghcr.io/demigod-tools/php:$PHP_VERSION
 
 RUN apt-get update -y \
     && apt-get upgrade -y  \
@@ -17,6 +18,8 @@ LABEL org.label-schema.vendor="demigod-tools" \
   org.label-schema.usage="https://github.com/$REPO_NAME/blob/master/README.md#usage" \
   org.label-schema.docker.cmd="docker run --rm -v \$PWD:/work $REPO_NAME --parser=markdown --write '**/*.md'" \
   org.label-schema.schema-version="1.0"
+
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 # Add Drush Launcher.
 RUN curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.10.1/drush.phar \
