@@ -4,7 +4,7 @@
 
 
 
-if [[ -n "${GITCLONE_URL}" ]]; then
+if [[ -n "${GITCLONE_URL}" && ! -d '/var/www/.git' ]]; then
 
   cd /var/www
   git init
