@@ -43,5 +43,6 @@ cd /root
 
 cd /var/www
 
-##composer install-vendor-dir
+nginx -g daemon off;
+
 
