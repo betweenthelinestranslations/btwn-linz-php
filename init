@@ -39,10 +39,6 @@ chmod 755 /var/www/web/sites/default/files
 chmod 755 /var/www/web/sites/default/temp
 chmod 755 /var/www/web/sites/default/private
 
-cd /root
-
 cd /var/www
-
-nginx -g "daemon off;"
 
 

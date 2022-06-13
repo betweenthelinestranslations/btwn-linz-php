@@ -35,6 +35,7 @@ RUN curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.10.
 RUN rm -Rf /usr/local/etc/conf.d
 COPY php /usr/local/etc
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY supervisord.conf /etc/supervisor/supervisord.conf
 COPY init /opt/init
 
 RUN chmod +x /docker-entrypoint.sh && chmod +x /opt/init
@@ -54,4 +55,5 @@ WORKDIR /var/www
 
 EXPOSE 9000
 ENTRYPOINT [ "/docker-entrypoint.sh"]
-CMD [ "php-fpm" ]
+CMD [ "/usr/bin/supervisord","-c", "/etc/supervisor/supervisord.conf:" ]
+
