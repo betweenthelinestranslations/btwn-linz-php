@@ -27,7 +27,7 @@ RUN curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.10.
  && mv drush.phar /usr/local/bin/drush \
  && curl -sSL https://sdk.cloud.google.com | bash
 
-
+RUN rm -Rf /usr/local/etc/conf.d
 COPY php /usr/local/etc
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY init /opt/init
