@@ -8,5 +8,5 @@ mkdir -p /files/public
 mkdir -p /files/private
 /opt/init &> /proc/self/fd/2 & disown
 
-
+nginx
 php-fpm
