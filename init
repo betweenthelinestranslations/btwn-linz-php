@@ -43,6 +43,6 @@ cd /root
 
 cd /var/www
 
-nginx -g daemon off;
+nginx -g "daemon off;"
 
 
