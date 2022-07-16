@@ -47,7 +47,11 @@ RUN chown -R www-data:www-data /var/www/web  \
     && ln -s /var/www/web /var/www/html \
     && mkdir -p /files/bucket-data \
     && mkdir -p /secrets/db \
-    && echo "<?php phpinfo(); " >> /var/www/web/index.php
+    && echo "<?php phpinfo(); " >> /var/www/web/index.php \
+    && wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /cloud_sql_proxy \
+    && chmod +x /cloud_sql_proxy \
+    && curl -O https://raw.githubusercontent.com/renatomefi/php-fpm-healthcheck/master/php-fpm-healthcheck \
+    && chmod +x /php-fpm-healthcheck
 
 STOPSIGNAL SIGQUIT
 
